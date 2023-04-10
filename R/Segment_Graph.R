@@ -116,7 +116,7 @@ segment_graph <- function(las = las, tree.locations = NULL, k = NULL, distance.t
   ## it seems like the equation in the original manuscript doesn't
   ## work that well for me... this can be modified
   if(use.metabolic.scale == TRUE) {
-    if(!null(metabolic.scale.function)){
+    if(!is.null(metabolic.scale.function)){
       eval(parse(text = paste('f <- function(x) { return(' , metabolic.scale.function , ')}', sep='')))
       met_scale <- f(tree.locations$Radius)
     } else {
